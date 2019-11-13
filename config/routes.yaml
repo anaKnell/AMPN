@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+bureau:
+      path: /bureau
+      controller: App\Controller\MembreController:show

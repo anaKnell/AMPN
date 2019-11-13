@@ -1,0 +1,20 @@
+.pic{
+  width:250px;
+  height:250px;
+}
+#team  .member{
+  text-align:center !important;
+}
+
+#team .member h4{
+  font-weight: 700;
+  margin-bottom: 2px;
+  font-size: 18px;
+  color: rgb(36, 77, 138);
+}
+
+#team .member span{
+  font-style: italic;
+  color: rgb(89, 90, 92);
+  font-size: 15px;
+}

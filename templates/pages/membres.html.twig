@@ -1,0 +1,22 @@
+{% extends 'base.html.twig'%}
+{% block title %}Bureau des Pieds Noirs{% endblock %}
+{% block content %}
+
+<h1>Titre</h1>
+        <div class="row" id="team">
+{% for membre in liste_membres %}
+          <div class="col-lg-3 col-md-6">
+            <div class="member m-3">
+              <div >
+                <img class="pic" src="/image/{{membre.image}} " alt="photo de {{membre.nom}} {{membre.prenom}}">
+              </div>
+              <h4>{{membre.nom}} {{membre.prenom}}</h4>
+              {% for statut in membre.statuts %}
+              <span>{{ statut.nom}}</span>
+              {% endfor %}
+            </div>
+          </div>
+{% endfor %}
+</div>
+          
+{% endblock %}
