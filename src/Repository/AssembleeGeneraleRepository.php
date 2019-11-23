@@ -19,10 +19,16 @@ class AssembleeGeneraleRepository extends ServiceEntityRepository
         parent::__construct($registry, AssembleeGenerale::class);
     }
 
-    // /**
-    //  * @return AssembleeGenerale[] Returns an array of AssembleeGenerale objects
-    //  */
-    /*
+    /**
+    * @return AssembleeGenerale[] Returns an array of AssembleeGenerale objects
+    */
+    
+    public function getAll(){
+        return $this->createQueryBuilder('a')
+              ->getQuery()
+              ->getResult();
+    }
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('a')
@@ -34,7 +40,6 @@ class AssembleeGeneraleRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?AssembleeGenerale

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Pieds Noirs | {% endblock %}</title>
+        {% include 'master/stylesheet.html.twig' %}
+    </head>
+    <body class="bg-dark">
+        {% include 'master/headerAdmin.html.twig' %}
+
+        <div class="container-fluid bg-dark">
+            {% block content %}{% endblock %}
+        </div>
+        {% include 'master/script.html.twig' %}
+    </body>
+</html>

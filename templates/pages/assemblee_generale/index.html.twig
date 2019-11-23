@@ -1,29 +1,27 @@
-{% extends 'base.html.twig' %}
+{% extends 'baseAdmin.html.twig' %}
 
-{% block title %}AssembleeGenerale index{% endblock %}
+{% block title %}Assemblee Generale index{% endblock %}
 
-{% block body %}
-    <h1>AssembleeGenerale index</h1>
+{% block content %}
+    <h1>Configuration des données de l'assemblée générale</h1>
 
-    <table class="table">
+    <table class="table table-striped table-dark">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Annee</th>
-                <th>Document</th>
-                <th>actions</th>
+                <th scope="col">Id</th>
+                <th scope="col">Annee</th>
+                <th scope="col">Document</th>
+                <th scope="col">actions</th>
             </tr>
         </thead>
         <tbody>
-        {% for assemblee_generale in assemblee_generales %}
+        {% for AssembleeGenerale in liste_ag %}
             <tr>
-                <td>{{ assemblee_generale.id }}</td>
-                <td>{{ assemblee_generale.annee }}</td>
-                <td>{{ assemblee_generale.document }}</td>
+                <th scope="row">{{ AssembleeGenerale.id }}</th>
+                <td>{{ AssembleeGenerale.annee }}</td>
+                <td>{{ AssembleeGenerale.document }}</td>
                 <td>
-                    <a href="{{ path('assemblee_generale_show', {'id': assemblee_generale.id}) }}">Voir</a>
-                    <a href="{{ path('assemblee_generale_edit', {'id': assemblee_generale.id}) }}">Editer</a>
-                    <a href="{{ path('assemblee_generale_edit', {'id': assemblee_generale.id}) }}">Supprimer</a>
+                    <a href="{{ path('assemblee_generale_show') }}">Voir</a>
                 </td>
             </tr>
         {% else %}

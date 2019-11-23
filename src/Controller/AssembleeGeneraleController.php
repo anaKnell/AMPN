@@ -11,18 +11,23 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/assemblee/generale")
+ * @Route("/assemblee-generale")
  */
 class AssembleeGeneraleController extends AbstractController
 {
     /**
-     * @Route("/", name="assemblee_generale_index", methods={"GET"})
+     * @Route("/assemblee-generale", name="assemblee_generale_index", methods={"GET"})
      */
-    public function index(AssembleeGeneraleRepository $assembleeGeneraleRepository): Response
+
+    public function index()
     {
-        return $this->render('pages/assemblee_generale/index.html.twig', [
-            'assemblee_generales' => $assembleeGeneraleRepository->findAll(),
-        ]);
+
+        $liste_ag = $this->getDoctrine()
+        ->getManager()
+        ->getRepository(AssembleeGenerale::class)
+        ->getAll();
+
+        return $this->render('pages/assemblee_generale/index.html.twig', ['liste_ag'=>$liste_ag]);
     }
 
     /**

@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MembreController extends AbstractController
 {
     /**
-     * @Route("/bureau-pieds-noirs", name="bureau")
+     * @Route("/bureau", name="bureau")
      */
 
     public function show()

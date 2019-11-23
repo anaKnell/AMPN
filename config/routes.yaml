@@ -5,3 +5,8 @@
 bureau:
       path: /bureau
       controller: App\Controller\MembreController:show
+
+assemblee_generale:
+      path: /assemblee-generale
+      controller: App\Controller\AssembleeGeneraleController:index
+
