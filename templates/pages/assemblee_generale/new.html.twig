@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New AssembleeGenerale{% endblock %}
+
+{% block body %}
+    <h1>Create new AssembleeGenerale</h1>
+
+    {{ include('assemblee_generale/_form.html.twig') }}
+
+    <a href="{{ path('assemblee_generale_index') }}">back to list</a>
+{% endblock %}

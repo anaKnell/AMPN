@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AssembleeGenerale index{% endblock %}
+
+{% block body %}
+    <h1>AssembleeGenerale index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Annee</th>
+                <th>Document</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for assemblee_generale in assemblee_generales %}
+            <tr>
+                <td>{{ assemblee_generale.id }}</td>
+                <td>{{ assemblee_generale.annee }}</td>
+                <td>{{ assemblee_generale.document }}</td>
+                <td>
+                    <a href="{{ path('assemblee_generale_show', {'id': assemblee_generale.id}) }}">Voir</a>
+                    <a href="{{ path('assemblee_generale_edit', {'id': assemblee_generale.id}) }}">Editer</a>
+                    <a href="{{ path('assemblee_generale_edit', {'id': assemblee_generale.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('assemblee_generale_new') }}">Create new</a>
+{% endblock %}

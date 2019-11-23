@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}AssembleeGenerale{% endblock %}
+
+{% block body %}
+    <h1>AssembleeGenerale</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ assemblee_generale.id }}</td>
+            </tr>
+            <tr>
+                <th>Annee</th>
+                <td>{{ assemblee_generale.annee }}</td>
+            </tr>
+            <tr>
+                <th>Document</th>
+                <td>{{ assemblee_generale.document }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('assemblee_generale_index') }}">back to list</a>
+
+    <a href="{{ path('assemblee_generale_edit', {'id': assemblee_generale.id}) }}">edit</a>
+
+    {{ include('assemblee_generale/_delete_form.html.twig') }}
+{% endblock %}
